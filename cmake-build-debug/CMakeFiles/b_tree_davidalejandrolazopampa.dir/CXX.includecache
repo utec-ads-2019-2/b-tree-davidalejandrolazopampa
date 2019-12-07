@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/David Lazo/Documents/GitHub/b-tree-davidalejandrolazopampa/btree.h
+node.h
+C:/Users/David Lazo/Documents/GitHub/b-tree-davidalejandrolazopampa/node.h
+
+C:/Users/David Lazo/Documents/GitHub/b-tree-davidalejandrolazopampa/main.cpp
+iostream
+-
+btree.h
+C:/Users/David Lazo/Documents/GitHub/b-tree-davidalejandrolazopampa/btree.h
+
+C:/Users/David Lazo/Documents/GitHub/b-tree-davidalejandrolazopampa/node.h
+vector
+-
+

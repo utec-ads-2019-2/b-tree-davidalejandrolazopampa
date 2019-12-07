@@ -4,31 +4,31 @@
 #include "node.h"
 
 template <typename T>
-class BTree {
-    private:
-        Node<T>* root;
-        unsigned int degree;
+class bTree {
+private:
+    Node<T>* root;
+    unsigned int degree;
 
-    public:
-        BTree(unsigned int degree) : degree(degree), root(nullptr) {};
+public:
+    bTree(unsigned int degree) : degree(degree), root(nullptr) {};
 
-        T search(int k) { 
-            // TODO
-        } 
+    T search(int k) {
+        // TODO
+    }
 
-        bool insert(int k, T data) {
-            // TODO
-        }
+    bool insert(int k, T data) {
+        // TODO
+    }
 
-        bool remove(int k) {
-            // TODO
-        }
+    bool remove(int k) {
+        // TODO
+    }
 
-        void print() {
-            // TODO
-        }
+    void print() {
+        // TODO
+    }
 
-        ~BTree();
+    ~bTree();
 };
 
 #endif

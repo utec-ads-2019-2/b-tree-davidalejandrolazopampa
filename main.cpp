@@ -5,6 +5,8 @@
 using namespace std;
 
 int main(int argc, char *argv[]) {
-    system("pause");
+
+    cout<<"Hola";
+    //system("pause");
     return EXIT_SUCCESS;
 }
