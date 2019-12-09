@@ -2,6 +2,8 @@
 #define NODE_H
 
 #include <vector>
+#include <queue>
+
 using namespace std;
 template<typename T> class BTree; //Se agrego generaba error
 template <typename T>
@@ -16,6 +18,7 @@ class Node {
 public:
     Node(unsigned int capacity, bool isLeaf = true) : capacity(capacity), isLeaf(isLeaf) {
         tamano = 0;
+        // puse el resize en el código base, pero no es una buena idea usarlo
         llaves.resize(capacity - 1);
         hijos.resize(capacity);
     }
@@ -235,12 +238,38 @@ public:
     }
     void KillSelf(){
         for(auto now : this->hijos) {
-            if (!now)
+            if (!now) // Así  no se debería controlar
                 continue;
             now->KillSelf();
         }
         delete this;
     }
+
+    void recorrerNodes() {
+            queue<pair<Node<T>*, int>> next;
+            next.push(pair<Node<T>*, int>(this, 0));
+
+            while (!next.empty()) {
+                auto temp = next.front();
+                next.pop();
+
+                temp.first->printIndexes(temp.second);
+
+                for (int i = 0; i < temp.first->hijos.size(); i++) {
+                    next.push(pair<Node<T>*, int>(temp.first->hijos[i], temp.second + 1));
+                }
+
+                cout << endl;
+            }  
+    }
+
+    void printIndexes(int level) {
+        cout << level << ": ";
+        for (int i = 0; i < llaves.size(); i++) {
+            cout << llaves[i] << " ";
+        }
+    }
+
     ~Node() {
         this->hijos.clear();
         this->llaves.clear();

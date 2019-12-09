@@ -60,7 +60,7 @@ public:
     }
     void print() {
         if(root){
-            root->print();
+            root->recorrerNodes();
         }
         cout<<" "<<endl;
     }
